@@ -2,7 +2,7 @@
 
 Hello and welcome to my Scrabble Java project
 
-I have created this to practice my skills in data structures and algorithms. This project uses Arrays and Linked Lists as the main data structures. I also have multiple recursive alrogithms in here.
+I have created this to practice my skills in data structures and algorithms. This project uses Arrays and Linked Lists as the main data structures.
 
 I also am learning the use of external REST/API and I use one for looking up validity of words in a dictionary.
 
