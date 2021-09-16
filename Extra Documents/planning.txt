@@ -1,0 +1,128 @@
+Scrabble Brainstorming
+
+
+Classes needed
+    Tile
+    Linked list
+    Board
+    Player
+
+Other things
+    Web Based API - Webster dictionary
+
+
+Tile:
+    Much like a cell class
+    Data:
+        Letter
+        Point Value
+        x and y
+
+Linked List
+    As usual
+    May need to make double linked
+
+Board
+    Grid
+    point value spaces
+
+Player
+    Data:
+        tiles in hand (ArrList)
+        Points
+
+    Draw function
+
+    basics:
+        grab tile from tileset
+        add to hand
+        already have function grab from tileset
+        draw(Tile tile)
+        tile will be added to hand
+        call with tile from grab
+
+    play function
+
+    shuffle function
+
+
+
+
+for getting words
+need some sort of algorithm to get the neighbors.
+Traverse the neighbors until there is nothing next.
+(Traverse backwards until we reach the smallest x or y)
+this is start of word
+Start there and add each tile to a LL
+go until end of word.
+return that
+
+foreach neighbors touching
+run alg to put in LL
+
+if cell has char and is not occupied,
+that cell is flagged for checking
+need to go all the way back until you reach one
+that has one in that direction that is blank.
+
+
+what does it look like to play on the board
+1. at least one tile has to neighbor previous tiles.
+2. place all tiles neighboring each other in any order
+3. press play tile.
+
+should have it check the api every time you place a tile.
+then can click play if valid
+
+TILE GET NEIGHBORS
+ok so
+check neighbors, add all straight line tiles to a list
+when tile is played, check the neighbors.
+if there are any neighbors, check the direction they are going
+ie-> x or y direction
+add all same direction neighbors to LL
+
+when you play a tile, grab the neighbors and add to LL
+check immediately with dictionary, if it returns false
+stop, cannot play word at this point.
+
+
+fix tile placement valid word problem
+bool is always true
+if word is invalid set to false
+no other way to reset to true besides pulling all pieces off
+
+
+
+check for valid placement
+- borders previous tiles
+- straight line
+
+when first tile is played, get row and col
+mark those as possible.
+when second tile is played, check if it is
+    in either of those row/col, mark accordingly
+anything outside of that row/col deems play invalid
+
+
+
+for bordering tiles
+    check all tiles and check neighbors
+    if none have a tile that is not in list
+    false
+
+    new function solely for checking if borders
+        passes in word LL
+        loops through and checks if surrounding tiles are occupied
+
+
+need some way to flag cells that have current word playing
+when tile is played, set is current to true for that cell
+when word is successfully played
+    set is current to false for all of those
+
+
+since we now have current flag
+can run an eastwest northsouth on all current tiles,
+create 2d list of words it makes
+arrayList of linked lists
